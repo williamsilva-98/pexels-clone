@@ -9,7 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     const getCuratedPhoto = async () => {
-      const res = await PexelsAPi.getCuratedPhoto();
+      const res = await PexelsAPi.getCurated(1);
       setImageHeader(res.photos[0].src.landscape);
     };
 
@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header>
-      {imageHeader && <img src={imageHeader} className="image-header" />}
+      {imageHeader && <img src={imageHeader} className="image-header" alt="banner"/>}
       <div className="center-container">
         <div className="content">
           <h1>
