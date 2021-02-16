@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from './components/Navbar'
+import './styles.scss'
 
 const App = () => {
   return (
     <div>
-      
+      <Navbar />
     </div>
   );
 }
