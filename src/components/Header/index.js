@@ -10,7 +10,8 @@ const Header = () => {
   useEffect(() => {
     const getCuratedPhoto = async () => {
       const res = await PexelsAPi.getCurated(1);
-      setImageHeader(res.photos[0].src.landscape);
+      const randomPhoto = Math.floor(Math.random() * res.photos.length)
+      setImageHeader(res.photos[randomPhoto].src.landscape);
     };
 
     getCuratedPhoto();
