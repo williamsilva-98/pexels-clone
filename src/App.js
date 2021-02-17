@@ -18,10 +18,8 @@ const App = () => {
     };
 
     window.addEventListener("scroll", scrollListener);
-    console.log('here');
 
     return () => {
-      console.log('here2');
       window.removeEventListener("scroll", scrollListener);
     };
   }, []);
