@@ -8,15 +8,15 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
+const Navbar = ({ blackNavbar }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const openHiddenMenu = () => {
-    setShowMenu(!showMenu)
+    setShowMenu(!showMenu);
   };
 
   return (
-    <nav>
+    <nav className={blackNavbar ? "black" : ""}>
       <div className="logo-section">
         <img src={Logo} />
         <div className="title">Pexels</div>
