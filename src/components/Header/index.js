@@ -9,8 +9,9 @@ const Header = () => {
 
   useEffect(() => {
     const getCuratedPhoto = async () => {
-      const res = await PexelsAPi.getCuratedPhoto();
-      setImageHeader(res.photos[0].src.landscape);
+      const res = await PexelsAPi.getCurated(1);
+      const randomPhoto = Math.floor(Math.random() * res.photos.length)
+      setImageHeader(res.photos[randomPhoto].src.landscape);
     };
 
     getCuratedPhoto();
@@ -18,7 +19,7 @@ const Header = () => {
 
   return (
     <header>
-      {imageHeader && <img src={imageHeader} className="image-header" />}
+      {imageHeader && <img src={imageHeader} className="image-header" alt="banner"/>}
       <div className="center-container">
         <div className="content">
           <h1>
